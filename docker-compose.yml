@@ -1,6 +1,11 @@
-version: "3.10"
+version: "3.3"
+
 services:
-  rootedcyber:
+  app:
     build: .
+    command: bash start.sh
+    restart: on-failure
     environment:
       CONFIG_FILE_URL: $CONFIG_FILE_URL
+    ports:
+      - "80:80"
